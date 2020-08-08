@@ -1,2 +1,2 @@
-# articles
+# Articles
 Displays Articles from mock network api
