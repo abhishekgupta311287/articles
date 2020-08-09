@@ -59,7 +59,7 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/articleImage"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/article_image_height"
         android:layout_marginTop="@dimen/margin_top"
         android:visibility="gone"
@@ -89,7 +89,6 @@
         android:paddingLeft="@dimen/content_margin"
         android:paddingRight="@dimen/content_margin"
         android:textColor="@android:color/black"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/articleContent"
         app:layout_editor_absoluteX="@dimen/content_margin"
         tools:text="Article Title" />
@@ -103,7 +102,6 @@
         android:paddingLeft="@dimen/content_margin"
         android:paddingRight="@dimen/content_margin"
         android:textColor="@android:color/black"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/articleTitle"
         app:layout_editor_absoluteX="@dimen/content_margin"
         tools:text="Article Url" />
