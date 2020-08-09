@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Articles</string>
+    <string name="likes">%s Likes</string>
+    <string name="comments">%s Comments</string>
+    <string name="user_name">%s %s</string>
+
 </resources>
