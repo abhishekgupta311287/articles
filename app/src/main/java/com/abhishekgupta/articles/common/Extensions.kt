@@ -1,5 +1,7 @@
 package com.abhishekgupta.articles.common
 
+import android.content.Context
+import android.net.ConnectivityManager
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -35,4 +37,11 @@ fun String.formatStringDate(): String {
             "$minutes min"
         }
     }
+}
+
+fun Context.isNetworkAvailable(): Boolean? {
+    val connectivityManager =
+        this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+    return connectivityManager.activeNetworkInfo?.isConnectedOrConnecting
 }

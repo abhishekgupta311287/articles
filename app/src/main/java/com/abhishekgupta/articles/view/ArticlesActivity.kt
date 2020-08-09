@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.abhishekgupta.articles.R
+import com.abhishekgupta.articles.common.isNetworkAvailable
 import com.abhishekgupta.articles.view.adapter.ArticlesAdapter
 import com.abhishekgupta.articles.viewmodel.ArticlesViewModel
 import kotlinx.android.synthetic.main.activity_articles.*
@@ -25,6 +26,7 @@ class ArticlesActivity : AppCompatActivity() {
         articlesView.layoutManager = LinearLayoutManager(this)
         articlesView.setHasFixedSize(true)
 
+        adapter.articles.add(null)
         articlesView.adapter = adapter
 
         fetchArticles(currentPage)
@@ -38,7 +40,7 @@ class ArticlesActivity : AppCompatActivity() {
                 val itemCount = layoutManager.itemCount
                 val lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition()
 
-                if (!isPaginating && itemCount <= lastVisibleItemPosition + THRESHOLD) {
+                if (!isPaginating && itemCount <= lastVisibleItemPosition + THRESHOLD && isNetworkAvailable() == true) {
                     adapter.articles.add(null)
                     adapter.notifyItemInserted(adapter.articles.size - 1)
                     fetchArticles(currentPage)
