@@ -20,7 +20,7 @@ class ArticlesAdapter :
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view = View.inflate(parent.context, R.layout.content_articles, parent)
+        val view = View.inflate(parent.context, R.layout.content_articles, null)
 
         return ArticleViewHolder(view)
     }
@@ -44,16 +44,17 @@ class ArticlesAdapter :
             }
 
             media?.let {
-                holder.articleTitle.text = media.title
+                holder.articleTitle.text = media.title?.capitalize()
                 holder.articleUrl.text = media.url
 
-                holder.articleImage.visibility =
-                    if (media.url.isNullOrEmpty()) {
+                holder.articleImage.visibility =View.VISIBLE
+
+                    if (media.image.isNullOrEmpty()) {
                         View.GONE
                     } else {
                         Glide
                             .with(holder.articleImage)
-                            .load(media.url)
+                            .load(media.image)
                             .into(holder.articleImage)
 
                         View.VISIBLE
@@ -61,7 +62,7 @@ class ArticlesAdapter :
 
             }
 
-            holder.articleContent.text = article.content
+            holder.articleContent.text = article.content?.capitalize()
             holder.likes.text = article.likes?.toLong()?.format()
             holder.comments.text = article.comments?.toLong()?.format()
             holder.createdTime.text = article.createdAt?.formatStringDate()
@@ -70,15 +71,15 @@ class ArticlesAdapter :
     }
 
     inner class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val articleTitle: TextView = view.findViewById(R.id.articleTitle)
+        val createdTime: TextView = view.findViewById(R.id.createdTime)
         val userName: TextView = view.findViewById(R.id.userName)
         val userDesignation: TextView = view.findViewById(R.id.userDesignation)
-        val createdTime: TextView = view.findViewById(R.id.createdTime)
+        val profilePic: ImageView = view.findViewById(R.id.profilePic)
+        val articleImage: ImageView = view.findViewById(R.id.articleImage)
         val articleContent: TextView = view.findViewById(R.id.articleContent)
+        val articleTitle: TextView = view.findViewById(R.id.articleTitle)
         val articleUrl: TextView = view.findViewById(R.id.articleUrl)
         val likes: TextView = view.findViewById(R.id.likes)
         val comments: TextView = view.findViewById(R.id.comments)
-        val articleImage: ImageView = view.findViewById(R.id.articleImage)
-        val profilePic: ImageView = view.findViewById(R.id.profilePic)
     }
 }
