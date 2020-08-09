@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         android:fullBackupContent="true">
         <activity
-            android:name=".ArticlesActivity"
+            android:name=".view.ArticlesActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

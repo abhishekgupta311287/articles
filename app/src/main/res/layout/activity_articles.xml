@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".ArticlesActivity">
+    tools:context=".view.ArticlesActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"

@@ -9,7 +9,7 @@
     android:layout_marginEnd="@dimen/content_margin"
     android:background="@android:color/white"
     android:padding="@dimen/content_padding"
-    tools:context=".ArticlesActivity">
+    tools:context=".view.ArticlesActivity">
 
     <com.abhishekgupta.articles.view.CircularImageView
         android:id="@+id/profilePic"

@@ -1,10 +1,11 @@
-package com.abhishekgupta.articles
+package com.abhishekgupta.articles.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.abhishekgupta.articles.R
 import com.abhishekgupta.articles.view.adapter.ArticlesAdapter
 import com.abhishekgupta.articles.viewmodel.ArticlesViewModel
 import kotlinx.android.synthetic.main.activity_articles.*
@@ -50,7 +51,10 @@ class ArticlesActivity : AppCompatActivity() {
         isPaginating = true
         val viewModel: ArticlesViewModel = get()
         viewModel
-            .fetchArticles(page, ARTICLES_LIMIT)
+            .fetchArticles(
+                page,
+                ARTICLES_LIMIT
+            )
             .observe(this, Observer {
                 if (adapter.articles.remove(null)) {
                     adapter.notifyItemRemoved(adapter.articles.size)
