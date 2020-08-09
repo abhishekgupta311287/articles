@@ -11,7 +11,7 @@
     android:padding="@dimen/content_padding"
     tools:context=".view.ArticlesActivity">
 
-    <com.abhishekgupta.articles.view.CircularImageView
+    <com.abhishekgupta.articles.view.custom.CircularImageView
         android:id="@+id/profilePic"
         android:layout_width="@dimen/circular_image_dimen"
         android:layout_height="@dimen/circular_image_dimen"

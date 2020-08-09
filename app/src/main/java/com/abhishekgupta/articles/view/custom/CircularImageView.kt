@@ -1,4 +1,4 @@
-package com.abhishekgupta.articles.view
+package com.abhishekgupta.articles.view.custom
 
 import android.content.Context
 import android.graphics.*
