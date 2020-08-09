@@ -20,6 +20,9 @@ buildscript {
 
         versions.rxjava = '2.2.17'
         versions.rxandroid = '2.1.1'
+
+        versions.room = '2.2.5'
+        versions.room_compiler = '2.0.0'
     }
     repositories {
         google()

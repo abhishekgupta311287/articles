@@ -1,7 +1,10 @@
 package com.abhishekgupta.articles.model
 
+import androidx.room.Entity
+
+@Entity(tableName = "articles_", primaryKeys = ["id"])
 data class Articles(
-    val id: String,
+    val id: Int,
     val createdAt: String? = null,
     val content: String? = null,
     val comments: Int? = null,
