@@ -9,9 +9,7 @@
     android:layout_marginEnd="@dimen/content_margin"
     android:background="@android:color/white"
     android:padding="@dimen/content_padding"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ArticlesActivity"
-    tools:showIn="@layout/activity_articles">
+    tools:context=".ArticlesActivity">
 
     <com.abhishekgupta.articles.view.CircularImageView
         android:id="@+id/profilePic"

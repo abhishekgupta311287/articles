@@ -11,8 +11,13 @@ import com.abhishekgupta.articles.common.formatStringDate
 import com.abhishekgupta.articles.model.Articles
 import com.bumptech.glide.Glide
 
-class ArticlesAdapter(private val articles: List<Articles>) :
+class ArticlesAdapter :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    var articles: List<Articles> = emptyList()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = View.inflate(parent.context, R.layout.content_articles, parent)
